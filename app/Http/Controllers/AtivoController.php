@@ -46,9 +46,6 @@ class AtivoController extends Controller
         return redirect()->route('ativos.index')->with('success', 'Ativo cadastrado com sucesso!');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         $ativo = Ativo::findOrFail($id);
@@ -77,10 +74,15 @@ class AtivoController extends Controller
         ]);
 
         $ativo = Ativo::findOrFail($id);
-        $ativo->update($request->all());
+        $ativo->nome = $request->nome;
+        $ativo->descricao = $request->descricao;
+        $ativo->valor = $request->valor;
+        $ativo->data_aquisicao = $request->data_aquisicao;
+        $ativo->save();
 
         return redirect()->route('ativos.index')->with('success', 'Ativo atualizado com sucesso!');
     }
+
 
     /**
      * Remove the specified resource from storage.
