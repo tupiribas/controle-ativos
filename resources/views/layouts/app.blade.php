@@ -13,13 +13,17 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased"> 
+<body class="font-sans antialiased">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="{{ route('ativos.index') }}">Controle de Ativos</a>
+            @auth
+            @include('layouts.navigation')
+            @endauth
         </div>
     </nav>
     <main class="py-4">
