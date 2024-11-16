@@ -1,20 +1,22 @@
 # Controle de Ativos
 
-## About Laravel
+## Sobre o Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel é um framework de aplicação web com sintaxe expressiva e elegante. Acreditamos que o desenvolvimento deve ser uma experiência agradável e criativa para ser verdadeiramente gratificante. O Laravel facilita o desenvolvimento, facilitando tarefas comuns usadas em muitos projetos web, como:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [Mecanismo de roteamento simples e rápido](https://laravel.com/docs/routing).
+- [Contêiner poderoso de injeção de dependência](https://laravel.com/docs/container).
+- Múltiplos back-ends para [Sessão](https://laravel.com/docs/session) e [cache](https://laravel.com/docs/cache) storage.
+- Expressivo, intuitivo [banco de dados ORM](https://laravel.com/docs/eloquent).
+- Agnóstico de banco de dados [migrações de esquema](https://laravel.com/docs/migrations).
+- [Processamento robusto de trabalhos em segundo plano](https://laravel.com/docs/queues).
+- [Transmissão de eventos em tempo real](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Laravel é acessível, poderoso e fornece as ferramentas necessárias para aplicações grandes e robustas.
 
 _________________________
+
+## Sobre o Projeto
 
 Este projeto é uma aplicação web desenvolvida com o framework Laravel. O objetivo é gerenciar ativos de uma empresa, permitindo o cadastro, edição e visualização de informações relacionadas aos ativos.
 
