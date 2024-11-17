@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
 {
@@ -38,23 +41,41 @@ class ProfileController extends Controller
     }
 
     /**
+     * Show the change password form.
+     */
+    public function showChangePasswordForm(): View
+    {
+        return view('profile.change-password');
+    }
+
+    /**
+     * Update the user's password.
+     */
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required', 'current_password'],
+            'new_password' => ['required', 'min:8', 'confirmed'],
+        ]);
+
+        /** @var User $user */
+        $user = Auth::user();
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        return Redirect::route('profile.edit')->with('status', 'password-updated');
+    }
+
+    /**
      * Delete the user's account.
      */
     public function destroy(Request $request): RedirectResponse
     {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
-
-        $user = $request->user();
+        $user = User::findOrFail($request->user()->id); // Similar ao Ativo
+        $user->delete();
 
         Auth::logout();
 
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
+        return Redirect::to('/')->with('success', 'Conta excluída com sucesso!');
     }
 }

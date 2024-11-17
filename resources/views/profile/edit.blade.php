@@ -27,6 +27,8 @@
             <button type="submit" class="btn btn-primary">Atualizar</button>
         </form>
 
+        <a href="{{ route('profile.change-password') }}" class="btn btn-secondary mt-3">Alterar Senha</a>
+
         <form action="{{ route('profile.destroy') }}" method="POST" class="mt-3">
             @csrf
             @method('DELETE')
